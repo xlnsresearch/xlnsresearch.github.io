@@ -7,9 +7,9 @@ A first set of files contains synthesizable Verilog modules for basic RLNS opera
 <DL>
   <DT> <tt>add2rlns.v</tt> defines <tt> add_residueLNS(s2,a2,b2);</tt> 
   <DD> Add inputs <tt> a2 </tt> and <tt> b2 </tt> producing the output <tt> s2 </tt> using the improved algorithm described in the <a href="http://dx.doi.org/10.1109/ARITH.2005.44"> paper </a>.
-  <DT> <tt>nad2rlns.v</tt> defines an alternative for <tt> add_1hot_residueLNS(s2,a2,b2);</tt>
+  <DT> <tt>nad2rlns.v</tt> defines an alternative for <tt> add_residueLNS(s2,a2,b2);</tt>
   <DD> Add inputs <tt> a2 </tt> and <tt> b2 </tt> producing the output <tt> s2 </tt> using a naive algorithm.
-  <DT> <tt>alt2rlns.v</tt> defines yet another alternative for <tt> add_1hot_residueLNS(s2,a2,b2);</tt> 
+  <DT> <tt>alt2rlns.v</tt> defines yet another alternative for <tt> add_residueLNS(s2,a2,b2);</tt> 
   <DD> Add inputs <tt> a2 </tt> and <tt> b2 </tt> producing the output <tt> s2 </tt> using an alternative Verilog coding for the naive algorithm.
   <DT> <tt>mul2rlns.v</tt> defines <tt> mul_residueLNS(p2,a2,b2);</tt>
   <DD> Multiply inputs <tt> a2 </tt> and <tt> b2 </tt> producing the output <tt> p2</tt>.
@@ -17,14 +17,14 @@ A first set of files contains synthesizable Verilog modules for basic RLNS opera
   <DD> Divide inputs <tt> a2 </tt> and <tt> b2 </tt> producing the output <tt> q2</tt>.
 </DD></DL>
 The bitwidth of the binary-encoded RLNS variables (<tt> a2, b2, ... </tt>) will be 1 (for the value sign) plus the sum of the bit widths of each of the moduli.
-For example, the moduli 4, 3, 5 and 7 used in the <a href="rlns.pdf"> paper </a> require 11 bits.  Each file will have a macro defined to avoid mixing incompatible files.  
+For example, the moduli 4, 3, 5 and 7 used in the <a href="http://dx.doi.org/10.1109/ARITH.2005.44"> paper </a> require 11 bits.  Each file will have a macro defined to avoid mixing incompatible files.  
 For the example moduli, this macro must be <tt> `MODULI_4_3_5_7 </TT> in every binary-encoded-moduli file.
 
 <P>
 Another similar set of files that contain synthesizable Verilog modules for one-hot-encoded moduli:
 <DL>
   <DT> <tt>add1rlns.v</tt> defines <tt> add_1hot_residueLNS(s1,a1,b1);</tt> 
-  <DD> Add inputs <tt> a1 </tt> and <tt> b1 </tt> producing the output <tt> s1 </tt> using the improved algorithm described in the <a href="rlns.pdf"> paper </a>.
+  <DD> Add inputs <tt> a1 </tt> and <tt> b1 </tt> producing the output <tt> s1 </tt> using the improved algorithm described in the <a href="http://dx.doi.org/10.1109/ARITH.2005.44"> paper </a>.
   <DT> <tt>nad1rlns.v</tt> defines an alternative for <tt> add_1hot_residueLNS(s2,a2,b2);</tt>
   <DD> Add inputs <tt> a1 </tt> and <tt> b1 </tt> producing the output <tt> s1 </tt> using a naive algorithm.
   <DT> <tt>alt1rlns.v</tt> defines yet another alternative for <tt> add_1hot_residueLNS(s2,a2,b2);</tt> 
@@ -35,7 +35,7 @@ Another similar set of files that contain synthesizable Verilog modules for one-
   <DD> Divide inputs <tt> a1 </tt> and <tt> b1 </tt> producing the output <tt> q1</tt>.
 </DD></DL>
 The bitwidth of the one-hot-encoded RLNS variables (<tt> a1, b1, ... </tt>) will be 1 (for the value sign) plus the sum of each of the moduli.
-For example, the moduli 4, 3, 5 and 7 used in the <a href="rlns.pdf"> paper </a> require 20 bits.  Each file will have a macro defined 
+For example, the moduli 4, 3, 5 and 7 used in the <a href="http://dx.doi.org/10.1109/ARITH.2005.44"> paper </a> require 20 bits.  Each file will have a macro defined 
 to avoid mixing incompatible files.  
 For the example moduli, this macro must be <tt> `MODULI_ONEHOT_4_3_5_7 </TT> in every one-hot-encoded-moduli file.
 
